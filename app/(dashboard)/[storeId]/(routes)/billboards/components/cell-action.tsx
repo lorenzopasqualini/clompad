@@ -33,7 +33,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 			router.refresh();
 		} catch (error) {
 			toast.error(
-				'Make sure you removed all categories using this billboard first.'
+				'Be sure you first removed all products using this billboard.'
 			);
 		} finally {
 			setOpen(false);
@@ -43,7 +43,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
 	const onCopy = (id: string) => {
 		navigator.clipboard.writeText(id);
-		toast.success('Billboard ID copied to clipboard.');
+		toast.success('Successfully copied billboard ID.');
 	};
 
 	return (
