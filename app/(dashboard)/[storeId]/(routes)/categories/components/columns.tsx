@@ -1,6 +1,6 @@
 'use client';
 import { ColumnDef } from '@tanstack/react-table';
-import { CellAction } from './cell-action.tsx';
+import { CellAction } from './cell-action';
 
 export type CategoryColumn = {
 	id: string;
