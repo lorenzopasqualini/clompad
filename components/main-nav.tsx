@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function MainNav({
 	className,
 	...props
-}: React.HTMLAttributes<HTMLElements>) {
+}: React.HTMLAttributes<HTMLElement>) {
 	const pathname = usePathname();
 	const params = useParams();
 	const routes = [
