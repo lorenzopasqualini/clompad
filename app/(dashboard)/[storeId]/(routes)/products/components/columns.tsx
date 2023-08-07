@@ -1,6 +1,7 @@
 'use client';
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
+import { cn } from '@/lib/utils';
 
 export type ProductColumn = {
 	id: string;
@@ -22,10 +23,26 @@ export const columns: ColumnDef<ProductColumn>[] = [
 	{
 		accessorKey: 'isArchived',
 		header: 'Archived',
+		cell: ({ row }) => (
+			<div
+				className={cn(
+					'border h-3 w-3 rounded-md',
+					row.original.isArchived ? 'bg-rose-500' : 'bg-green-500'
+				)}
+			/>
+		),
 	},
 	{
 		accessorKey: 'isFeatured',
 		header: 'Featured',
+		cell: ({ row }) => (
+			<div
+				className={cn(
+					'border h-3 w-3 rounded-md',
+					row.original.isFeatured ? 'bg-indigo-500' : 'bg-white'
+				)}
+			/>
+		),
 	},
 	{
 		accessorKey: 'price',
@@ -44,11 +61,11 @@ export const columns: ColumnDef<ProductColumn>[] = [
 		header: 'Color',
 		cell: ({ row }) => (
 			<div className="flex items-center gap-x-2">
-				{row.original.color}
 				<div
 					className="h-6 w-6 rounded-full border"
 					style={{ backgroundColor: row.original.color }}
-				></div>
+				/>
+					{row.original.color}
 			</div>
 		),
 	},
