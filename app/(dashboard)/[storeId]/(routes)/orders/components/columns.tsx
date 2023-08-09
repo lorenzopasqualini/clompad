@@ -14,31 +14,31 @@ export type OrderColumn = {
 
 export const columns: ColumnDef<OrderColumn>[] = [
   {
+    accessorKey: "isPaid",
+    header: "Paid",
+    cell: ({ row }) => (
+      <div
+        className={cn(
+          'border h-3 w-3 rounded-md',
+          row.original.isPaid ? 'bg-green-500' : 'bg-rose-500'
+        )}
+      />
+    ),
+  },
+  {
     accessorKey: "products",
     header: "Products",
-  },
-  {
-    accessorKey: "phone",
-    header: "Phone",
-  },
-  {
-    accessorKey: "address",
-    header: "Address",
   },
   {
     accessorKey: "totalPrice",
     header: "Total price",
   },
   {
-    accessorKey: "isPaid",
-    header: "Paid",
-    cell: ({ row }) => (
-			<div
-				className={cn(
-					'border h-3 w-3 rounded-md',
-					row.original.isPaid ? 'bg-green-500' : 'bg-rose-500'
-				)}
-			/>
-		),
+    accessorKey: "address",
+    header: "Address",
+  },
+  {
+    accessorKey: "phone",
+    header: "Phone",
   },
 ];
